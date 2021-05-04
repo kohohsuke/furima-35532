@@ -33,7 +33,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :records
+- has_one :record
 
 ## records
 
@@ -46,7 +46,7 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :shippings
+- has_one :shipping
 
 ## Shippings
 
@@ -56,6 +56,7 @@
 | prefecture_id      | integer     | null: false                    |
 | city               | string      | null: false                    |
 | address            | string      | null: false                    |
+| building_name      | string      |                                |
 | phone_number       | string      | null: false                    |
 | record_id          | integer     | null: false, foreign_key: true |
 
