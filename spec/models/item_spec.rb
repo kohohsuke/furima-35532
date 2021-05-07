@@ -34,7 +34,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Category Select')
       end
       it 'category_idが0では出品できない' do
-        @item.category_id = '0'
+        @item.category_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('Category Select')
       end
@@ -44,7 +44,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Status Select')
       end
       it 'status_idが0では出品できない' do
-        @item.status_id = '0'
+        @item.status_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('Status Select')
       end
@@ -54,7 +54,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Shipping free Select')
       end
       it 'shipping_free_idが0では出品できない' do
-        @item.shipping_free_id = '0'
+        @item.shipping_free_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping free Select')
       end
@@ -64,7 +64,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Prefecture Select')
       end
       it 'prefecture_idが0では出品できない' do
-        @item.prefecture_id = '0'
+        @item.prefecture_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture Select')
       end
@@ -74,7 +74,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Schedule Select')
       end
       it 'schedule_idが0では出品できない' do
-        @item.schedule_id = '0'
+        @item.schedule_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('Schedule Select')
       end
