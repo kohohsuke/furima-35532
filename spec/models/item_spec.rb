@@ -31,52 +31,52 @@ RSpec.describe Item, type: :model do
       it 'category_idが空では出品できない' do
         @item.category_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category Select")
+        expect(@item.errors.full_messages).to include('Category Select')
       end
       it 'category_idが0では出品できない' do
         @item.category_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category Select")
+        expect(@item.errors.full_messages).to include('Category Select')
       end
       it 'status_idが空では出品できない' do
         @item.status_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status Select")
+        expect(@item.errors.full_messages).to include('Status Select')
       end
       it 'status_idが0では出品できない' do
         @item.status_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status Select")
+        expect(@item.errors.full_messages).to include('Status Select')
       end
       it 'shipping_free_idが空では出品できない' do
         @item.shipping_free_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping free Select")
+        expect(@item.errors.full_messages).to include('Shipping free Select')
       end
       it 'shipping_free_idが0では出品できない' do
         @item.shipping_free_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping free Select")
+        expect(@item.errors.full_messages).to include('Shipping free Select')
       end
       it 'prefecture_idが空では出品できない' do
         @item.prefecture_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture Select")
+        expect(@item.errors.full_messages).to include('Prefecture Select')
       end
       it 'prefecture_idが0では出品できない' do
         @item.prefecture_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture Select")
+        expect(@item.errors.full_messages).to include('Prefecture Select')
       end
       it 'schedule_idが空では出品できない' do
         @item.schedule_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Schedule Select")
+        expect(@item.errors.full_messages).to include('Schedule Select')
       end
       it 'schedule_idが0では出品できない' do
         @item.schedule_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Schedule Select")
+        expect(@item.errors.full_messages).to include('Schedule Select')
       end
       it 'priceが空では出品できない' do
         @item.price = ''
@@ -86,17 +86,17 @@ RSpec.describe Item, type: :model do
       it 'priceが299以下では出品できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Out of setting range")
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceが10000000以上では出品できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Out of setting range")
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceが半角数字以外では出品できない' do
         @item.price = '９９９９９９９'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Half-width number")
+        expect(@item.errors.full_messages).to include('Price Half-width number')
       end
     end
   end
