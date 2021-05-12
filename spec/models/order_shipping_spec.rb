@@ -80,6 +80,11 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Item can't be blank")
       end
+      it 'tokenが空では保存できないこと' do
+        @order_shipping.token = nil
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Token can't be blank")
+      end
     end
   end
 end
