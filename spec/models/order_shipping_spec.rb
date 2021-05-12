@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe OrderShipping, type: :model do
-  describe '発送先情報の登録'do
+  describe '発送先情報の登録' do
     before do
       @user = FactoryBot.create(:user)
       @item = FactoryBot.create(:item)
@@ -28,22 +28,22 @@ RSpec.describe OrderShipping, type: :model do
       it 'post_codeにハイフンが含まれていないと保存できないこと' do
         @order_shipping.post_code = '1234567'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Post code Input correctly")
+        expect(@order_shipping.errors.full_messages).to include('Post code Input correctly')
       end
       it 'post_codeが3桁と4桁以外だと保存できないこと' do
         @order_shipping.post_code = '123-456'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Post code Input correctly")
+        expect(@order_shipping.errors.full_messages).to include('Post code Input correctly')
       end
       it 'prefecture_idが空だと保存できないこと' do
         @order_shipping.prefecture_id = ''
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Prefecture Select")
+        expect(@order_shipping.errors.full_messages).to include('Prefecture Select')
       end
       it 'prefecture_idが0だと保存できないこと' do
         @order_shipping.prefecture_id = 0
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Prefecture Select")
+        expect(@order_shipping.errors.full_messages).to include('Prefecture Select')
       end
       it 'cityが空だと保存できないこと' do
         @order_shipping.city = ''
@@ -63,12 +63,12 @@ RSpec.describe OrderShipping, type: :model do
       it 'phone_numberが12桁以上だと保存できないこと' do
         @order_shipping.phone_number = '090123456789'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Phone number Input only number")
+        expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
       end
       it 'phone_numberが数値以外だと保存できないこと' do
         @order_shipping.phone_number = '090-1234-5678'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Phone number Input only number")
+        expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
       end
       it 'userが紐付いていないと保存できないこと' do
         @order_shipping.user_id = nil

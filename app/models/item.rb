@@ -27,5 +27,4 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_free
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :schedule
-
 end
