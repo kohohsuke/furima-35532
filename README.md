@@ -14,7 +14,7 @@
 ### Association
 
 - has_many :items
-- has_many :records
+- has_many :orders
 
 ## items
 
@@ -35,12 +35,12 @@
 - belongs_to :user
 - has_one :record
 
-## records
+## orders
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| user           | references | null: false, foreign_key: true |
+| item           | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -57,9 +57,9 @@
 | city          | string      | null: false                    |
 | address       | string      | null: false                    |
 | building_name | string      |                                |
-| phone_number  | string      | null: false                    |
-| record        | references  | null: false, foreign_key: true |
+| phone_number  | integer     | null: false                    |
+| order         | references  | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :record
+- belongs_to :order
