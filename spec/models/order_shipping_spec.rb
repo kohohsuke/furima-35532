@@ -65,6 +65,11 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
       end
+      it 'phone_numberが9桁以下だと保存できないこと' do
+        @order_shipping.phone_number = '090123456'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
+      end
       it 'phone_numberが数値以外だと保存できないこと' do
         @order_shipping.phone_number = '090-1234-5678'
         @order_shipping.valid?
