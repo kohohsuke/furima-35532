@@ -15,6 +15,7 @@
 
 - has_many :items
 - has_many :orders
+- has_many :cards
 
 ## items
 
@@ -63,3 +64,15 @@
 ### Association
 
 - belongs_to :order
+
+## Cards
+
+| Column         | Type       | Options                         |
+| -------------- | ---------- | ------------------------------- |
+| card_token     | string     | null: false, unique: true       |
+| customer_token | string     | null: false,                    |
+| user           | references | null: false, foreign__key: true |
+
+### Association
+
+- belongs_to :user
